@@ -15,7 +15,21 @@
 
 ---
 
+## 📋 Table of Contents
 
+- [Overview](#-overview)
+- [Demo](#-demo)
+- [Features](#-features)
+- [Architecture](#-architecture)
+- [Installation](#-installation)
+- [Usage](#-usage)
+- [Dataset](#-dataset)
+- [Model Performance](#-model-performance)
+- [Results](#-results)
+- [Project Structure](#-project-structure)
+- [Contributing](#-contributing)
+- [License](#-license)
+- [Acknowledgments](#-acknowledgments)
 
 ---
 
@@ -36,9 +50,18 @@ This project implements a **Convolutional Neural Network (CNN)** to detect 68 fa
 
 <div align="center">
 
-| Input Image | Detected Keypoints | 3D Visualization |
-|------------|-------------------|------------------|
-| ![Input](docs/images/input.jpg) | ![Output](docs/images/output.jpg) | ![3D](docs/images/3d_view.jpg) |
+### Example Results
+
+<table>
+<tr>
+<td align="center"><b>Input Image</b></td>
+<td align="center"><b>Detected Keypoints</b></td>
+</tr>
+<tr>
+<td><img src="https://raw.githubusercontent.com/karan-kunwar/Facial-Keypoint-Detection/master/images/obamas.jpg" width="300"/></td>
+<td><img src="https://raw.githubusercontent.com/karan-kunwar/Facial-Keypoint-Detection/master/images/obamas_detected.jpg" width="300"/></td>
+</tr>
+</table>
 
 </div>
 
@@ -203,6 +226,19 @@ detector.visualize(image, keypoints, save_path='output.jpg')
 
 This project uses the **YouTube Faces Dataset** with facial keypoint annotations.
 
+### Dataset Structure
+```
+data/
+├── training/
+│   ├── images/
+│   └── keypoints.csv
+├── validation/
+│   ├── images/
+│   └── keypoints.csv
+└── test/
+    ├── images/
+    └── keypoints.csv
+```
 
 ### Data Statistics
 - **Training samples:** 3,462
@@ -234,8 +270,7 @@ Or manually download from: [Dataset Link]
 
 <div align="center">
 
-![Loss Curve](docs/images/loss_curve.png)
-![Accuracy Curve](docs/images/accuracy_curve.png)
+<img src="https://raw.githubusercontent.com/udacity/P1_Facial_Keypoints/master/images/key_pts_example.png" alt="Training Progress" width="600"/>
 
 </div>
 
@@ -255,9 +290,22 @@ Or manually download from: [Dataset Link]
 
 <div align="center">
 
-| Different Angles | Various Lighting | Facial Expressions |
-|-----------------|------------------|-------------------|
-| ![Angle](docs/results/angles.jpg) | ![Light](docs/results/lighting.jpg) | ![Expression](docs/results/expressions.jpg) |
+<table>
+<tr>
+<td align="center">
+<img src="https://miro.medium.com/max/1400/1*AbEg8EgQUMZxBvop3n7MHw.png" alt="Multiple Face Detection" width="600"/>
+<br/>
+<b>Multiple Face Detection with Keypoints</b>
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="https://www.researchgate.net/publication/343337619/figure/fig1/AS:919395161600000@1596199537854/Examples-of-the-68-facial-landmarks.png" alt="68 Landmarks" width="400"/>
+<br/>
+<b>68 Facial Landmark Points</b>
+</td>
+</tr>
+</table>
 
 </div>
 
@@ -270,7 +318,41 @@ The model handles various challenging conditions:
 - ⚠️ Extreme angles (>60°) - reduced accuracy
 - ⚠️ Very low resolution (<50px face)
 
+---
 
+## 📁 Project Structure
+
+```
+Facial-Keypoints-Detection/
+├── data/                      # Dataset directory
+├── models/                    # Model architectures
+│   ├── __init__.py
+│   ├── cnn_model.py          # Main CNN architecture
+│   └── keypoint_detector.py  # Detector class
+├── utils/                     # Utility functions
+│   ├── __init__.py
+│   ├── preprocessing.py      # Image preprocessing
+│   ├── visualization.py      # Result visualization
+│   └── data_loader.py        # Dataset handling
+├── configs/                   # Configuration files
+│   └── model_config.yaml
+├── notebooks/                 # Jupyter notebooks
+│   ├── exploratory_analysis.ipynb
+│   └── model_evaluation.ipynb
+├── scripts/                   # Helper scripts
+│   ├── download_data.py
+│   └── evaluate_model.py
+├── weights/                   # Pre-trained weights
+│   └── best_model.pth
+├── docs/                      # Documentation
+├── requirements.txt           # Dependencies
+├── train.py                   # Training script
+├── detect.py                  # Inference script
+├── demo.py                    # Demo application
+└── README.md                  # This file
+```
+
+---
 
 ## 🤝 Contributing
 
