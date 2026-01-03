@@ -15,21 +15,7 @@
 
 ---
 
-## 📋 Table of Contents
 
-- [Overview](#-overview)
-- [Demo](#-demo)
-- [Features](#-features)
-- [Architecture](#-architecture)
-- [Installation](#-installation)
-- [Usage](#-usage)
-- [Dataset](#-dataset)
-- [Model Performance](#-model-performance)
-- [Results](#-results)
-- [Project Structure](#-project-structure)
-- [Contributing](#-contributing)
-- [License](#-license)
-- [Acknowledgments](#-acknowledgments)
 
 ---
 
@@ -217,19 +203,6 @@ detector.visualize(image, keypoints, save_path='output.jpg')
 
 This project uses the **YouTube Faces Dataset** with facial keypoint annotations.
 
-### Dataset Structure
-```
-data/
-├── training/
-│   ├── images/
-│   └── keypoints.csv
-├── validation/
-│   ├── images/
-│   └── keypoints.csv
-└── test/
-    ├── images/
-    └── keypoints.csv
-```
 
 ### Data Statistics
 - **Training samples:** 3,462
@@ -297,41 +270,7 @@ The model handles various challenging conditions:
 - ⚠️ Extreme angles (>60°) - reduced accuracy
 - ⚠️ Very low resolution (<50px face)
 
----
 
-## 📁 Project Structure
-
-```
-Facial-Keypoints-Detection/
-├── data/                      # Dataset directory
-├── models/                    # Model architectures
-│   ├── __init__.py
-│   ├── cnn_model.py          # Main CNN architecture
-│   └── keypoint_detector.py  # Detector class
-├── utils/                     # Utility functions
-│   ├── __init__.py
-│   ├── preprocessing.py      # Image preprocessing
-│   ├── visualization.py      # Result visualization
-│   └── data_loader.py        # Dataset handling
-├── configs/                   # Configuration files
-│   └── model_config.yaml
-├── notebooks/                 # Jupyter notebooks
-│   ├── exploratory_analysis.ipynb
-│   └── model_evaluation.ipynb
-├── scripts/                   # Helper scripts
-│   ├── download_data.py
-│   └── evaluate_model.py
-├── weights/                   # Pre-trained weights
-│   └── best_model.pth
-├── docs/                      # Documentation
-├── requirements.txt           # Dependencies
-├── train.py                   # Training script
-├── detect.py                  # Inference script
-├── demo.py                    # Demo application
-└── README.md                  # This file
-```
-
----
 
 ## 🤝 Contributing
 
